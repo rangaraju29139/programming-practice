@@ -2,6 +2,7 @@ package Semaphore.ProducerConsumerProblem;
 
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.Semaphore;
 
 public class Client {
     public static void main(String[] args) {
@@ -9,17 +10,20 @@ public class Client {
         int capacity = 5;
         String name;
 
-
-
-        Producer p1 = new Producer(store,capacity,"p1");
-        Producer p2 = new Producer(store,capacity,"p2");
-        Producer p3 = new Producer(store,capacity,"p3");
+        Semaphore ps = new Semaphore(capacity);
+        Semaphore cs = new Semaphore(0);
 
 
 
-        Consumer c1 = new Consumer(store,capacity,"c1");
-        Consumer c2 = new Consumer(store,capacity,"c2");
-        Consumer c3 = new Consumer(store,capacity,"c3");
+        Producer p1 = new Producer(store,capacity,"p1",ps,cs);
+        Producer p2 = new Producer(store,capacity,"p2",ps,cs);
+        Producer p3 = new Producer(store,capacity,"p3",ps,cs);
+
+
+
+        Consumer c1 = new Consumer(store,capacity,"c1",ps,cs);
+        Consumer c2 = new Consumer(store,capacity,"c2",ps,cs);
+        Consumer c3 = new Consumer(store,capacity,"c3",ps,cs);
 
 
 

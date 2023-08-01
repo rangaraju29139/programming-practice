@@ -81,3 +81,8 @@ public class Solution {
     }
 }
 ```
+
+### Approach 3 : using the fact that the missing possitive number lies between 1 and N
+
+1. place all the elements in the right index 
+1. traverse again and check whether they are in  the right position  of not.

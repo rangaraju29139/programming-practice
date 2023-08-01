@@ -1,4 +1,4 @@
-package Synchronizations;
+package Synchronizations.AtomicVariables;
 
 public class Adder implements  Runnable{
 
@@ -10,8 +10,8 @@ public class Adder implements  Runnable{
     public void run() {
 
         for(int i=0;i<=10000;i++){
-            count.value+=i;
-            System.out.println(count.value + " printed by Thread "+ Thread.currentThread().getName());
+            count.value.getAndAdd(i);
+            System.out.println(count.value.get() + " printed by Thread "+ Thread.currentThread().getName());
         }
 
     }

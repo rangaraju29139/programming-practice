@@ -1,4 +1,4 @@
-package Synchronizations;
+package Synchronizations.AtomicVariables;
 
 public class Client {
     public static void main(String[] args) throws InterruptedException {
@@ -21,7 +21,7 @@ public class Client {
         t1.join();
         t2.join();
 
-        System.out.println(count.value + " printed by "+Thread.currentThread().getName());
+        System.out.println(count.value.get() + " printed by "+Thread.currentThread().getName());
 
 
 

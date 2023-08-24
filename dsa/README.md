@@ -12,3 +12,4 @@
    3. [Even SubArray](Arrays/13.%20Even%20Subarrays.md)
    4. [Max Contiguous subarray](Arrays/15.Max%20Sum%20Contiguous%20Subarray.md)
    5. [Majority Element of Array](Leetcode/169.%20Majority%20Element.md)
+   6. [sum of all subarrays](Arrays/16.%20sum%20of%20all%20subarrays.md)
